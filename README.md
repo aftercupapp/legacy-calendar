@@ -25,7 +25,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 ## 🚀 Technical details
 
 * **Version:** `v1.0`
-* **Platform:** Android 2.1 Eclair (tested on [Sony Ericson Xperia X10 Mini Pro](https://i.postimg.cc/ydbBZBFt/20260209_191844.jpg)) 
+* **Platform:** Android 2.1 Eclair (tested on [Sony Ericson Xperia X10 Mini Pro](https://i.postimg.cc/ydbBZBFt/20260209_191844.jpg)) - no other Android versions supported currently
 * **Storage:** `LocalStorage` persistence.
 
 ---

@@ -1,6 +1,6 @@
 # Legacy Calendar by Aftercup (Android 2.1 Eclair)
 
-Calendar support based on the Aftercup Calendar main app for Android 2.1 Eclair.
+Open source calendar apk based on the Aftercup Calendar main app for Android 2.1 Eclair. This is only a project I created for my own entertainment, bugs can occur as it was a challange to create this service.
 
 ---
 

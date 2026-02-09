@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aftercup</title>
+
+    <style>
+        /* --- BASE STYLES --- */
+        html, body {
+            height: 100%; width: 100%; margin: 0; padding: 0;
+            font-family: sans-serif;
+            font-size: 14px; overflow: hidden;
+            /* Default variables for Light Theme */
+            background-color: #ffffff; color: #000000;
+        }
+
+        /* Box Sizing Fix for small screens */
+        * { box-sizing: border-box; }
+
+        /* --- THEME DEFINITIONS --- */
+        /* Light (Default) */
+        body.theme-light { background: #fff; color: #000; }
+        body.theme-light .app-header { background: #f0f0f0; border-bottom: 2px solid #000; }
+        body.theme-light .header-center { color: #000; }
+        body.theme-light .view-container { background: #fff; }
+        body.theme-light .event-item { border-bottom: 1px solid #ccc; }
+        body.theme-light .event-title { color: #000; }
+        body.theme-light .event-date { color: #666; }
+        body.theme-light .popup { background: #fff; color: #000; }
+        body.theme-light input, body.theme-light textarea { background: #fff; color: #000; border: 1px solid #000; }
+
+        /* Dark Theme */
+        body.theme-dark { background: #000; color: #fff; }
+        body.theme-dark .app-header { background: #222; border-bottom: 2px solid #666; }
+        body.theme-dark .header-center { color: #fff; }
+        body.theme-dark .view-container { background: #000; }
+        body.theme-dark .event-item { border-bottom: 1px solid #333; }
+        body.theme-dark .event-title { color: #fff; }
+        body.theme-dark .event-date { color: #aaa; }
+        body.theme-dark .popup { background: #111; color: #fff; }
+        body.theme-dark input, body.theme-dark textarea { background: #333; color: #fff; border: 1px solid #666; }
+        body.theme-dark .btn { background: #333; color: #fff; border: 1px solid #666; }
+        body.theme-dark .action-btn { background: #333; color: #fff; border: 1px solid #666; }
+        body.theme-dark #month-controls { background: #222; color: #fff; border-bottom: 1px solid #333; }
+        body.theme-dark td { border: 1px solid #333; }
+        body.theme-dark #day-preview { background: #111; border-top: 2px solid #666; }
+
+        /* Blue Theme */
+        body.theme-blue { background: #f0f8ff; color: #000; }
+        body.theme-blue .app-header { background: #0066cc; border-bottom: 2px solid #003366; }
+        body.theme-blue .header-center { color: #fff; }
+        body.theme-blue .view-container { background: #fff; }
+        body.theme-blue .event-item { border-bottom: 1px solid #b0c4de; }
+        body.theme-blue .popup { background: #f0f8ff; }
+        body.theme-blue .btn { border: 1px solid #003366; }
+
+        /* --- LAYOUT --- */
+        .app-header {
+            height: 50px; /* Slightly taller for bigger buttons */
+            position: relative; z-index: 10;
+        }
+
+        .header-center {
+            position: absolute; top: 0; left: 0; width: 100%; height: 50px;
+            line-height: 50px; text-align: center; font-weight: bold;
+            font-size: 18px; text-transform: uppercase; z-index: 1;
+        }
+
+        .header-left { position: absolute; top: 8px; left: 5px; z-index: 10; }
+        .header-right { position: absolute; top: 8px; right: 5px; z-index: 10; }
+
+        /* Bigger Header Buttons */
+        .btn {
+            background: #ddd; border: 1px solid #000;
+            font-weight: bold; color: #000; cursor: pointer;
+            font-size: 18px; /* Bigger font */
+            width: 36px; height: 34px; /* Bigger touch target */
+            padding: 0; text-align: center; line-height: 32px;
+        }
+        .btn-black { background: #000; color: #fff; border: 1px solid #000; }
+
+        /* Views */
+        .view-container {
+            position: absolute; top: 52px; bottom: 0; width: 100%;
+            overflow-y: auto;
+        }
+
+        /* List Items */
+        .event-item { padding: 8px; min-height: 40px; position: relative; }
+        .event-date { font-size: 12px; font-weight: bold; }
+        .event-title { font-size: 16px; font-weight: bold; padding-right: 70px; }
+
+        .item-actions { position: absolute; top: 8px; right: 5px; }
+        .action-btn {
+            font-size: 12px; font-weight:bold; width: 28px; height: 28px; /* Bigger edit/del buttons */
+            border: 1px solid #999; background: #eee;
+            margin-left: 4px; cursor: pointer; padding: 0;
+        }
+        .btn-del { background: #000; color: #fff; border-color: #000; }
+
+        /* Month View */
+        #month-controls { text-align: center; padding: 8px; background: #eee; border-bottom: 1px solid #ccc; font-weight: bold; }
+        table.calendar-grid { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        th { font-size: 12px; background: #333; color: #fff; padding: 4px 0; }
+        td { height: 38px; border: 1px solid #ccc; text-align: center; font-size: 14px; cursor: pointer; } /* Bigger cells */
+
+        .has-event { background-color: #ddd; font-weight: bold; text-decoration: underline; color: #000; }
+        .selected-day { background-color: #000 !important; color: #fff !important; }
+        .today-cell { border: 2px solid #000; }
+
+        #day-preview { border-top: 2px solid #000; padding: 5px; background: #f9f9f9; min-height: 100px; }
+
+        /* --- POPUPS FIXED --- */
+        .popup {
+            display: none; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; z-index: 100;
+            padding: 10px;
+            overflow-y: auto; /* Allow scrolling if keyboard hides buttons */
+        }
+        .popup h3 { margin: 5px 0 10px 0; border-bottom: 2px solid #000; font-size: 18px; }
+
+        label { display: block; margin-bottom: 3px; font-weight: bold; font-size: 14px; }
+
+        /* Inputs constrained to 95% width */
+        input, textarea {
+            width: 95%; /* Prevents horizontal scroll */
+            padding: 8px; margin-bottom: 12px;
+            border: 1px solid #000; font-family: sans-serif; font-size: 16px; /* Bigger text */
+        }
+
+        /* Bigger Main Buttons */
+        .full-btn {
+            width: 95%; padding: 12px; border: 1px solid #000;
+            background: #000; color: #fff; margin-bottom: 8px;
+            font-size: 16px; font-weight: bold;
+        }
+        .secondary-btn { background: #fff; color: #000; }
+
+        /* Theme Buttons */
+        .theme-row { text-align: center; margin-bottom: 15px; }
+        .theme-btn {
+            width: 30%; padding: 8px; font-size: 12px;
+            margin: 0 1%; cursor: pointer; border: 1px solid #000;
+        }
+
+    </style>
+</head>
+<body onload="initApp()" class="theme-light">
+
+<div class="app-header">
+    <div class="header-center">Calendar</div>
+    <div class="header-left">
+        <button id="btn-toggle" class="btn" onclick="toggleView()">#</button>
+    </div>
+    <div class="header-right">
+        <button class="btn" onclick="openSettings()">*</button>
+        <button class="btn btn-black" onclick="openAddPopup()">+</button>
+    </div>
+</div>
+
+<div id="view-list" class="view-container">
+    <div id="event-list-content"></div>
+</div>
+
+<div id="view-month" class="view-container" style="display:none;">
+    <div id="month-controls">
+        <button class="btn" style="width:30px; height:30px; line-height:28px;" onclick="changeMonth(-1)">&lt;</button>
+        <span id="month-label" style="margin:0 10px; font-size:16px;">Jan 2026</span>
+        <button class="btn" style="width:30px; height:30px; line-height:28px;" onclick="changeMonth(1)">&gt;</button>
+    </div>
+    <table class="calendar-grid">
+        <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+        <tbody id="calendar-body"></tbody>
+    </table>
+    <div id="day-preview">
+        <div style="font-size:14px; font-weight:bold; margin-bottom:5px;" id="preview-date-label">Events</div>
+        <div id="preview-list"></div>
+    </div>
+</div>
+
+<div id="event-popup" class="popup">
+    <h3 id="popup-title">New Event</h3>
+    <label>Date (YYYY-MM-DD):</label> <input type="text" id="input-date" />
+    <label>Title:</label> <input type="text" id="input-title" />
+    <button class="full-btn" onclick="saveEvent()">SAVE</button>
+    <button class="full-btn secondary-btn" onclick="closePopups()">CANCEL</button>
+</div>
+
+<div id="settings-popup" class="popup">
+    <h3>Settings</h3>
+
+    <label>Theme:</label>
+    <div class="theme-row">
+        <button class="theme-btn" style="background:#fff; color:#000;" onclick="setTheme('light')">Light</button>
+        <button class="theme-btn" style="background:#000; color:#fff;" onclick="setTheme('dark')">Dark</button>
+        <button class="theme-btn" style="background:#0066cc; color:#fff;" onclick="setTheme('blue')">Blue</button>
+    </div>
+
+    <label>Backup Data:</label> <textarea id="backup-area" readonly style="height:50px"></textarea>
+    <label>Restore Data:</label> <textarea id="restore-area" style="height:50px"></textarea>
+    <button class="full-btn" onclick="restoreData()">RESTORE</button>
+    <button class="full-btn secondary-btn" onclick="closePopups()">CLOSE</button>
+</div>
+
+<script>
+    var eventsData = []; var editingId = null; var currentView = 'list';
+    var calDate = new Date(); var selectedDateStr = "";
+
+    function initApp() {
+        // Load Theme
+        var savedTheme = localStorage.getItem('app_theme') || 'light';
+        setTheme(savedTheme);
+
+        selectedDateStr = formatDateStr(new Date());
+        loadData();
+    }
+
+    function setTheme(t) {
+        document.body.className = "theme-" + t;
+        localStorage.setItem('app_theme', t);
+    }
+
+    function loadData() {
+        if(window.localStorage && localStorage.getItem('local_list')) {
+            try { eventsData = JSON.parse(localStorage.getItem('local_list')); renderCurrentView(); } catch(e) { eventsData = []; }
+        } else {
+            var xhr = new XMLHttpRequest(); xhr.overrideMimeType("application/json");
+            xhr.open("GET", "data.json", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+                    try {
+                        eventsData = JSON.parse(xhr.responseText);
+                        for(var i=0; i<eventsData.length; i++) if(!eventsData[i].id) eventsData[i].id = new Date().getTime()+i;
+                        renderCurrentView();
+                    } catch (e) {}
+                }
+            }; xhr.send(null);
+        }
+    }
+    function saveData() { if(window.localStorage) localStorage.setItem('local_list', JSON.stringify(eventsData)); renderCurrentView(); }
+
+    function toggleView() {
+        var btn = document.getElementById('btn-toggle');
+        if(currentView === 'list') {
+            currentView = 'month';
+            document.getElementById('view-list').style.display = 'none';
+            document.getElementById('view-month').style.display = 'block';
+            btn.innerHTML = '='; renderCalendar(); renderPreviewList();
+        } else {
+            currentView = 'list';
+            document.getElementById('view-list').style.display = 'block';
+            document.getElementById('view-month').style.display = 'none';
+            btn.innerHTML = '#'; renderList();
+        }
+    }
+    function renderCurrentView() { if(currentView === 'list') renderList(); else { renderCalendar(); renderPreviewList(); } }
+
+    function renderList() {
+        var c = document.getElementById("event-list-content"); c.innerHTML = "";
+        if (eventsData.length === 0) { c.innerHTML = '<div style="text-align:center; padding:20px; opacity:0.5;">No events.</div>'; return; }
+        eventsData.sort(function(a, b) { return a.date.localeCompare(b.date); });
+        var html = '';
+        for (var i = 0; i < eventsData.length; i++) {
+            var item = eventsData[i];
+            html += '<div class="event-item"><div class="event-date">' + item.date + '</div>';
+            html += '<div class="event-title">' + item.title + '</div>';
+            html += '<div class="item-actions">';
+            html += '<button class="action-btn" onclick="openEdit(' + item.id + ')">/</button>';
+            html += '<button class="action-btn btn-del" onclick="deleteEvent(' + item.id + ')">X</button>';
+            html += '</div></div>';
+        }
+        c.innerHTML = html;
+    }
+
+    function changeMonth(d) { calDate.setMonth(calDate.getMonth() + d); renderCalendar(); }
+    function renderCalendar() {
+        var year = calDate.getFullYear(); var month = calDate.getMonth();
+        var mNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        document.getElementById("month-label").innerHTML = mNames[month] + " " + year;
+        var first = new Date(year, month, 1); var start = first.getDay(); var days = new Date(year, month+1, 0).getDate();
+        var today = formatDateStr(new Date());
+        var html = ''; var d = 1;
+        for (var i=0; i<6; i++) {
+            html += '<tr>';
+            for (var j=0; j<7; j++) {
+                if ((i===0 && j<start) || d>days) { html += '<td></td>'; } else {
+                    var cStr = year + "-" + pad(month+1) + "-" + pad(d);
+                    var has = false; for(var k=0; k<eventsData.length; k++) if(eventsData[k].date===cStr) { has=true; break; }
+                    var cls = []; if(has) cls.push("has-event"); if(cStr===today) cls.push("today-cell"); if(cStr===selectedDateStr) cls.push("selected-day");
+                    html += '<td class="' + cls.join(" ") + '" onclick="selectDate(\'' + cStr + '\')">' + d + '</td>'; d++;
+                }
+            }
+            html += '</tr>'; if (d>days) break;
+        }
+        document.getElementById("calendar-body").innerHTML = html;
+    }
+
+    function selectDate(s) { selectedDateStr = s; renderCalendar(); renderPreviewList(); }
+    function renderPreviewList() {
+        var c = document.getElementById("preview-list");
+        document.getElementById("preview-date-label").innerHTML = selectedDateStr;
+        var html = ''; var count = 0;
+        for(var i=0; i<eventsData.length; i++) {
+            if(eventsData[i].date === selectedDateStr) {
+                html += '<div style="padding:5px; border-bottom:1px solid #666;"><span style="font-weight:bold;">' + eventsData[i].title + '</span>';
+                html += ' <button class="action-btn btn-del" style="float:right;" onclick="deleteEvent(' + eventsData[i].id + ')">X</button></div>';
+                count++;
+            }
+        }
+        if(count === 0) html = '<div style="opacity:0.5; padding:5px; font-style:italic;">Empty.</div>';
+        html += '<div style="margin-top:5px; text-align:center;"><button class="full-btn" style="width:95%" onclick="openAddPopup(\'' + selectedDateStr + '\')">+</button></div>';
+        c.innerHTML = html;
+    }
+
+    function deleteEvent(id) { if(confirm("Delete?")) { var n=[]; for(var i=0;i<eventsData.length;i++) if(eventsData[i].id!=id) n.push(eventsData[i]); eventsData=n; saveData(); } }
+    function openEdit(id) {
+        var item; for(var i=0;i<eventsData.length;i++) if(eventsData[i].id==id) item=eventsData[i];
+        if(item) { editingId=id; document.getElementById("popup-title").innerHTML="Edit"; document.getElementById("input-title").value=item.title; document.getElementById("input-date").value=item.date; closePopups(); document.getElementById("event-popup").style.display="block"; }
+    }
+    function saveEvent() {
+        var t=document.getElementById("input-title").value; var d=document.getElementById("input-date").value;
+        if(!t||!d) { alert("Data missing"); return; }
+        if(editingId) { for(var i=0;i<eventsData.length;i++) if(eventsData[i].id==editingId) { eventsData[i].title=t; eventsData[i].date=d; break; } }
+        else { eventsData.push({ id:new Date().getTime(), title:t, date:d }); }
+        saveData(); closePopups();
+    }
+    function closePopups() { document.getElementById("event-popup").style.display="none"; document.getElementById("settings-popup").style.display="none"; editingId=null; }
+    function openAddPopup(d) { editingId=null; document.getElementById("popup-title").innerHTML="New"; document.getElementById("input-title").value=""; document.getElementById("input-date").value=d||selectedDateStr||formatDateStr(new Date()); closePopups(); document.getElementById("event-popup").style.display="block"; }
+    function openSettings() { closePopups(); document.getElementById("settings-popup").style.display="block"; document.getElementById("backup-area").value=JSON.stringify(eventsData); }
+    function restoreData() { try { var d=JSON.parse(document.getElementById("restore-area").value); if(d&&d.length!==undefined) { eventsData=d; saveData(); closePopups(); alert("OK"); } } catch(e){ alert("Error"); } }
+    function pad(n) { return n<10?'0'+n:n; } function formatDateStr(d) { return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+</script>
+</body>
+</html>

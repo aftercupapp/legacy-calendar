@@ -8,9 +8,10 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 | **Views** | **Features** |
 | :---: | :---: |
-| ![List View](https://i.postimg.cc/MHn3ktTS/Kepernyokep-2026-02-10-172059.png) <br> **List View** | ![Month View](https://i.postimg.cc/j2D3Vv50/Kepernyokep-2026-02-10-172142.png) <br> **Month View** |
-| ![Menu](https://i.postimg.cc/d3hNMn1K/Kepernyokep-2026-02-10-172234.png) <br> **Menu Hub** | ![Search](https://i.postimg.cc/PJCVGKq9/Kepernyokep-2026-02-10-172249.png) <br> **Search** |
-| ![Jump](https://i.postimg.cc/7hjsq7CW/Kepernyokep-2026-02-10-172300.png) <br> **Jump to Date** | ![New Event](https://i.postimg.cc/ZnX7J39Q/Kepernyokep-2026-02-10-172326.png) <br> **Color Categories** |
+| ![List View](https://i.postimg.cc/MHn3ktTS/Kepernyokep-2026-02-10-172059.png) <br> **List view** | ![Month View](https://i.postimg.cc/j2D3Vv50/Kepernyokep-2026-02-10-172142.png) <br> **Month view** |
+| ![New](https://i.postimg.cc/d3hNMn1K/Kepernyokep-2026-02-10-172234.png) <br> **New entry** | ![Menu](https://i.postimg.cc/PJCVGKq9/Kepernyokep-2026-02-10-172249.png) <br> **Menu** |
+| ![Search](https://i.postimg.cc/7hjsq7CW/Kepernyokep-2026-02-10-172300.png) <br> **Search** | ![Jump](https://i.postimg.cc/ZnX7J39Q/Kepernyokep-2026-02-10-172326.png) <br> **Jump to Date** |
+| ![Settings](https://i.postimg.cc/x8Bx9HJ2/Képernyőkép_2026_02_10_172345.png) <br> **Settings** | |
 
 ### 🎨 Themes
 

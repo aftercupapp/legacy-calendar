@@ -1,3 +1,5 @@
+https://www.dropbox.com/scl/fi/s237jc6pz9wkx8esq1nol/legacy-calendar-1.0.1.apk?rlkey=rkcs40p6d5izx7qugrqtvpph0&st=ob6cmei9&dl=0
+
 # Legacy Calendar by Aftercup (Android 2.1 Eclair)
 
 Open source calendar apk based on the Aftercup Calendar main app for Android 2.1 Eclair. This is only a project I created for my own entertainment, bugs can occur as it was a challenge to create this service.

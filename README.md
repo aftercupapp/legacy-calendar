@@ -6,7 +6,6 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 ## 📱 Gallery
 
-| **Views** | **Features** |
 | :---: | :---: |
 | ![List View](https://i.postimg.cc/MHn3ktTS/Kepernyokep-2026-02-10-172059.png) <br> **List view** | ![Month View](https://i.postimg.cc/j2D3Vv50/Kepernyokep-2026-02-10-172142.png) <br> **Month view** |
 | ![New](https://i.postimg.cc/d3hNMn1K/Kepernyokep-2026-02-10-172234.png) <br> **New entry** | ![Menu](https://i.postimg.cc/PJCVGKq9/Kepernyokep-2026-02-10-172249.png) <br> **Menu** |

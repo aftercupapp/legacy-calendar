@@ -52,6 +52,6 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 1.  Download the latest **APK** from the release badge below.
 2.  Install on your **Android 2.1 device**.
 
-[![Download](https://img.shields.io/badge/↓_Download-v1.0.1-000000?style=for-the-badge&logoColor=white&labelColor=black&color=white)](https://dl.dropbox.com/scl/fi/8y2wg1eyg92wj4nyql7bx/legacy-calendar-1.0.1.apk?rlkey=pd7dlhfyrdcvzeccqmco4wjxu&st=bcgl56yo)
+[![Download](https://img.shields.io/badge/↓_Download-v1.0.1-000000?style=for-the-badge&logoColor=white&labelColor=black&color=white)](https://dl.dropbox.com/scl/fi/s237jc6pz9wkx8esq1nol/legacy-calendar-1.0.1.apk?rlkey=rkcs40p6d5izx7qugrqtvpph0&st=ob6cmei9)
 
 [![Normal version on Google Play](https://img.shields.io/badge/Google_Play-normal_verion-000000?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.aftercup.calendar&hl=en)

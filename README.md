@@ -23,8 +23,8 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 ## ✨ Key Features
 
-* **Dual Views:** Switch seamlessly between **List** and **Month (Grid)** views.
-* **Event Management:** Add, edit, and delete events with **Color Categories** (Red, Green, Blue, Yellow).
+* **Dual views:** Switch seamlessly between **list** and **month (grid)** views.
+* **Event management:** Add, edit, and delete events with **color categories**.
 * **Navigation:**
     * **Search** functionality to find events by title.
     * **Jump to Date** selector (Year/Month).
@@ -35,7 +35,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 * **Data:**
     * Offline storage (LocalStorage).
     * **Backup/Restore** via JSON copy-paste.
-    * **Reset Data** option to clear cache.
+    * **Reset data** option to clear cache.
 
 ---
 
@@ -43,7 +43,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 * **Version:** `v1.0.1`
 * **Platform:** Android 2.1 Eclair (tested on [Sony Ericsson Xperia X10 Mini Pro](https://i.postimg.cc/ydbBZBFt/20260209_191844.jpg)) - no other Android versions supported currently.
-* **Architecture:** Hybrid App (WebView + Native Java Bridge for hardware back button support).
+* **Architecture:** Hybrid App (WebView + Native Java Bridge)
 
 ---
 

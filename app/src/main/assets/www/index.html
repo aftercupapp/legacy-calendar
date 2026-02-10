@@ -348,7 +348,10 @@
     function renderList() {
         var c = document.getElementById("event-list-content"); c.innerHTML = "";
         if (eventsData.length === 0) { c.innerHTML = '<div style="text-align:center; padding:20px; opacity:0.5;">No events.</div>'; return; }
-        eventsData.sort(function(a, b) { return a.date.localeCompare(b.date); });
+
+        // CHANGED: Sort Descending (Newest First)
+        eventsData.sort(function(a, b) { return b.date.localeCompare(a.date); });
+
         var html = '';
         for (var i = 0; i < eventsData.length; i++) {
             var item = eventsData[i];

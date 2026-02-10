@@ -10,13 +10,12 @@ android {
         applicationId = "com.aftercup.calendar"
         minSdk = 7        // Android 2.1
         targetSdk = 10    // Android 2.3 (Stable legacy target)
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.0.1"
     }
 
     signingConfigs {
         create("release") {
-            // Forces V1 Signing (Required for Android 2.1)
             storeFile = file(System.getProperty("user.home") + "/.android/debug.keystore")
             storePassword = "android"
             keyAlias = "androiddebugkey"

@@ -1,7 +1,12 @@
 [
   {
     "id": 1707000000001,
-    "title": "Welcome to Aftercup Calendar",
+    "title": "Welcome to Aftercup Calendar made for Android 2.1 Eclair. This is the first release of the Calendar. Please do not hesitate to reach us at aftercup@post.com.",
     "date": "2026-02-08"
+  },
+  {
+    "id": 1707000000002,
+    "title": "Build 1.0.1 is out <3",
+    "date": "2026-02-10"
   }
 ]

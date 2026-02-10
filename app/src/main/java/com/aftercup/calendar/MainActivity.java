@@ -21,7 +21,11 @@ public class MainActivity extends Activity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        
+        webSettings.setDatabaseEnabled(true);
+
+        String databasePath = this.getApplicationContext().getDir("database", Context.MODE_PRIVATE).getPath();
+        webSettings.setDatabasePath(databasePath);
+
         myWebView.addJavascriptInterface(new WebAppInterface(this), "Android");
 
         myWebView.setWebViewClient(new WebViewClient());
@@ -44,7 +48,6 @@ public class MainActivity extends Activity {
         WebAppInterface(Context c) {
             mContext = c;
         }
-
         public void closeApp() {
             finish();
         }

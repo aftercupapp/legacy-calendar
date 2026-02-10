@@ -1,4 +1,4 @@
-[](https://i.postimg.cc/c41pxqDk/Android-Eclair.webp)
+[1](https://i.postimg.cc/c41pxqDk/Android-Eclair.webp)
 
 # Legacy Calendar by Aftercup (Android 2.1 Eclair)
 

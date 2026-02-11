@@ -1,6 +1,6 @@
-# Legacy Calendar by Aftercup (Android 2.1 Eclair)
+# Legacy Calendar by Aftercup (Android 2.1 Eclair - 4.4 Kitkat)
 
-Open source calendar apk based on the Aftercup Calendar main app for Android 2.1 Eclair. This is only a project I created for my own entertainment, bugs can occur as it was a challenge to create this service.
+Open source calendar apk based on the Aftercup Calendar main app for Android 2.1 Eclair. This is only a project I created for my own entertainment, bugs can occur as it was a challenge to create this service. **Due to a bug and fixing proccess in Android Studio, the code is currently not up-to-date.**
 
 ---
 
@@ -8,10 +8,10 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 | | |
 | :---: | :---: |
-| ![List View](https://i.postimg.cc/MHn3ktTS/Kepernyokep-2026-02-10-172059.png) <br> **List view** | ![Month View](https://i.postimg.cc/j2D3Vv50/Kepernyokep-2026-02-10-172142.png) <br> **Month view** |
-| ![New](https://i.postimg.cc/d3hNMn1K/Kepernyokep-2026-02-10-172234.png) <br> **New entry** | ![Menu](https://i.postimg.cc/PJCVGKq9/Kepernyokep-2026-02-10-172249.png) <br> **Menu** |
-| ![Search](https://i.postimg.cc/7hjsq7CW/Kepernyokep-2026-02-10-172300.png) <br> **Search** | ![Jump](https://i.postimg.cc/ZnX7J39Q/Kepernyokep-2026-02-10-172326.png) <br> **Jump to Date** |
-| ![Settings](https://i.postimg.cc/x8Bx9HJ2/Képernyőkép_2026_02_10_172345.png) <br> **Settings** | |
+| ![List View](https://i.postimg.cc/TwhKVLPN/Screenshot_2026_02_11_19_49_04.png) <br> **List view** | ![Month View](https://i.postimg.cc/V65JqrNg/Screenshot_2026_02_11_19_49_10.png) <br> **Month view** |
+| ![New](https://i.postimg.cc/2631Qb5X/Screenshot_2026_02_11_19_49_18.png) <br> **New entry** | ![Menu](https://i.postimg.cc/50jXBYtn/Screenshot_2026_02_11_19_49_23.png) <br> **Menu** |
+| ![Search](https://i.postimg.cc/nzMX4jLR/Screenshot_2026_02_11_19_49_35.png) <br> **Search** | ![Jump](https://i.postimg.cc/9057tdnm/Screenshot-2026-02-11-21-28-02.png) <br> **Jump to Date** |
+| ![Settings](https://i.postimg.cc/2631Qb5w/Screenshot_2026_02_11_19_49_29.png) <br> **Settings** | ![theme](https://i.postimg.cc/50jXBYtp/Screenshot_2026_02_11_20_49_24.png) <br> **Theme drawer** |
 
 ### 🎨 Themes
 
@@ -30,7 +30,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
     * **Jump to Date** selector (Year/Month).
     * **"Today"** button for quick access.
 * **Customization:**
-    * 4 Themes: **Light**, **Dark**, **Blue**, **Pink**.
+    * 5 Themes: **Light**, **Dark**, **Blue**, **Pink**, **Paper**.
     * Toggle **Monday** or **Sunday** week start.
 * **Data:**
     * Offline storage (LocalStorage).
@@ -41,8 +41,8 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 ## 🚀 Technical details
 
-* **Version:** `v1.0.1`
-* **Platform:** Android 2.1 Eclair (tested on [Sony Ericsson Xperia X10 Mini Pro](https://i.postimg.cc/ydbBZBFt/20260209_191844.jpg)) - no other Android versions supported currently.
+* **Version:** `v1.1`
+* **Platform:** Android 2.1 Eclair (tested on [Sony Ericsson Xperia X10 Mini Pro](https://i.postimg.cc/ydbBZBFt/20260209_191844.jpg)) to Android 4.4 Kitkat (Tested on Samsung Galaxy SII)
 * **Architecture:** Hybrid app (WebView + Native Java Bridge)
 
 ---

@@ -15,8 +15,8 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 ### 🎨 Themes
 
-| | | | |
-| :---: | :---: | :---: | :---: |
+| | | 
+| :---: | :---: | :---: |
 | ![White](https://i.postimg.cc/j2D3Vv50/Képernyőkép_2026_02_10_172142.png) <br> **White Theme** | ![Dark](https://i.postimg.cc/d3gHJd7p/Kepernyokep-2026-02-10-172403.png) <br> **Dark Theme** | ![Blue](https://i.postimg.cc/T1B7TmL3/Kepernyokep-2026-02-10-172425.png) <br> **Blue Theme** | ![Pink](https://i.postimg.cc/6qFjBR2Q/Kepernyokep-2026-02-10-172454.png) <br> **Pink Theme** |
 
 ---

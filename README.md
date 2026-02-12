@@ -42,7 +42,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 ## 🚀 Technical details
 
-* **Version:** `v1.1`
+* **Version:** `v1.1.1`
 * **Platform:** Android 2.1 Eclair (tested on [Sony Ericsson Xperia X10 Mini Pro](https://i.postimg.cc/ydbBZBFt/20260209_191844.jpg)) to Android 4.4 Kitkat (tested on [Samsung Galaxy SII with Android 4.1.3](https://i.postimg.cc/X7W2ndYb/20260211-194844.jpg))
 * **Architecture:** Hybrid app (WebView + Native Java Bridge)
 
@@ -53,6 +53,6 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 1.  Download the latest **APK** from the release badge below.
 2.  Install on your **Android 2.1 - 4.4 device**.
 
-[![Download](https://img.shields.io/badge/↓_Download-v1.1-000000?style=for-the-badge&logoColor=white&labelColor=black&color=white)](https://dl.dropbox.com/scl/fi/wv8itz4qusm6uh5lqnurg/legacy-calendar-1.1.apk?rlkey=cl0cn3aimquzflzr83eeej5q4&st=6mpdj1zw)
+[![Download](https://img.shields.io/badge/↓_Download-v1.1-000000?style=for-the-badge&logoColor=white&labelColor=black&color=white)](https://dl.dropbox.com/scl/fi/b2jnxr81vjos5791y86xf/legacy-calendar-1.1.1.apk?rlkey=3or3023a3xslh76an5ihgp52r&st=w1monqw2)
 
 [![Normal version on Google Play](https://img.shields.io/badge/Google_Play-normal_verion-000000?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.aftercup.calendar&hl=en)

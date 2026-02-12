@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="Legacy Calendar"
+        android:label="Aftercup Calendar"
         android:icon="@android:drawable/ic_menu_day"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 

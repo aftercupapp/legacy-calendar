@@ -17,6 +17,9 @@
 
         * { box-sizing: border-box; }
 
+        /* --- THEME DEFINITIONS --- */
+
+        /* LIGHT */
         body.theme-light { background: #fff; color: #000; }
         body.theme-light .app-header { background: #f0f0f0; border-bottom: 2px solid #000; }
         body.theme-light .header-center { color: #000; }
@@ -26,6 +29,7 @@
         body.theme-light .popup { background: #fff; color: #000; }
         body.theme-light input, body.theme-light textarea, body.theme-light select { background: #fff; color: #000; border: 1px solid #000; }
 
+        /* DARK */
         body.theme-dark { background: #000; color: #fff; }
         body.theme-dark .app-header { background: #222; border-bottom: 2px solid #666; }
         body.theme-dark .header-center { color: #fff; }
@@ -40,6 +44,7 @@
         body.theme-dark td { border: 1px solid #333; }
         body.theme-dark #day-preview { background: #111; border-top: 2px solid #666; }
 
+        /* BLUE */
         body.theme-blue { background: #e6f2ff; color: #003366; }
         body.theme-blue .app-header { background: #0066cc; border-bottom: 2px solid #003366; }
         body.theme-blue .header-center { color: #fff; }
@@ -62,6 +67,7 @@
         body.theme-blue .today-cell { border: 2px solid #003366; }
         body.theme-blue #day-preview { background: #d9e6f2; border-top: 2px solid #004080; }
 
+        /* PINK */
         body.theme-pink { background: #fff0f5; color: #880e4f; }
         body.theme-pink .app-header { background: #e91e63; border-bottom: 2px solid #880e4f; }
         body.theme-pink .header-center { color: #fff; }
@@ -84,6 +90,80 @@
         body.theme-pink .today-cell { border: 2px solid #880e4f; }
         body.theme-pink #day-preview { background: #fce4ec; border-top: 2px solid #c2185b; }
 
+        /* PAPER - RETRO FIBROUS TEXTURE */
+        body.theme-paper {
+            background-color: #d8c8b0;
+            /* High-res fibrous paper texture Base64 */
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAyADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAJRAAAgICAQIGAwEAAAAAAAAAAQIAAwQRBRITITFBYXEiUoGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APi1FIsBLMFA9TGYwWq8B7Ait6n0g4q76XVOwJb03H42M1l4R1K+5HqJAm3Iqpy+yqwWpr8hK68cW2BEfY35sR4S/K4000dwjZ3569oyjDWvH8TsAs1vfuYFeRXXx9Q7HD2N6a9BM573s/JiZdfSbb3Z22SfSMo4Yse0g/6BFY1/w/E+Rl364/yH/I+jiBU6n6j/ACaXH8cOxdjzoQCTx/G+Kxdh9R6D3mjkYyrX2gaGpaqCpdKNAQ7kFq2fQwM6nCFh0w2PSaC8WvboKJdVAqg6+XvLq27l3A//2Q==');
+            background-repeat: repeat;
+            background-size: 100px 100px;
+            color: #2b1d19; /* Very dark brown text */
+            font-family: 'Courier New', serif; /* Typewriter font */
+        }
+
+        body.theme-paper .app-header {
+            background: #5d4037;
+            border-bottom: 3px solid #3e2723;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.3); /* Slight 3D depth */
+        }
+
+        body.theme-paper .header-center {
+            color: #f1e7d0;
+            font-family: serif;
+            font-weight:bold;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        /* Transparent items to let paper show through */
+        body.theme-paper .event-item {
+            border-bottom: 1px solid #8d6e63;
+            background: transparent;
+        }
+
+        body.theme-paper .event-title { color: #2b1d19; font-weight: bold; }
+        body.theme-paper .event-date { color: #5d4037; font-style: italic; }
+
+        /* Popups behave like separate paper notes */
+        body.theme-paper .popup {
+            background-color: #e6dcc3;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAyADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAJRAAAgICAQIGAwEAAAAAAAAAAQIAAwQRBRITITFBYXEiUoGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APi1FIsBLMFA9TGYwWq8B7Ait6n0g4q76XVOwJb03H42M1l4R1K+5HqJAm3Iqpy+yqwWpr8hK68cW2BEfY35sR4S/K4000dwjZ3569oyjDWvH8TsAs1vfuYFeRXXx9Q7HD2N6a9BM573s/JiZdfSbb3Z22SfSMo4Yse0g/6BFY1/w/E+Rl364/yH/I+jiBU6n6j/ACaXH8cOxdjzoQCTx/G+Kxdh9R6D3mjkYyrX2gaGpaqCpdKNAQ7kFq2fQwM6nCFh0w2PSaC8WvboKJdVAqg6+XvLq27l3A//2Q==');
+            background-repeat: repeat;
+            border: 2px solid #5d4037;
+            color: #3e2723;
+        }
+
+        body.theme-paper input, body.theme-paper textarea, body.theme-paper select {
+            background: rgba(255,255,255,0.4);
+            color: #2b1d19;
+            border: 1px solid #5d4037;
+            font-family: 'Courier New', serif;
+        }
+
+        /* Buttons look like parchment pieces */
+        body.theme-paper .btn { background: #d7ccc8; color: #3e2723; border: 1px solid #5d4037; font-family: serif; font-weight:bold; }
+        body.theme-paper .btn-black { background: #3e2723; color: #f3e5ab; border: 1px solid #000; }
+        body.theme-paper .action-btn { background: #d7ccc8; color: #3e2723; border: 1px solid #5d4037; }
+        body.theme-paper .btn-del { background: #3e2723; color: #fff; border: 1px solid #000; }
+
+        body.theme-paper .full-btn {
+            background: #5d4037;
+            color: #f3e5ab;
+            border: 1px solid #3e2723;
+            font-family: serif;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        body.theme-paper .secondary-btn { background: transparent; color: #3e2723; border: 1px solid #4e342e; text-shadow: none; }
+
+        body.theme-paper #month-controls { background: rgba(0,0,0,0.1); color: #3e2723; border-bottom: 1px solid #8d6e63; font-family: serif; }
+        body.theme-paper th { background: #4e342e; color: #f3e5ab; font-family: serif; }
+        body.theme-paper td { border: 1px solid #8d6e63; background: transparent; font-family: serif; }
+        body.theme-paper .has-event { background: rgba(255,213,79,0.4); color: #3e2723; font-weight: bold; border: 2px solid #8d6e63; }
+        body.theme-paper .selected-day { background: #3e2723 !important; color: #f3e5ab !important; }
+        body.theme-paper .today-cell { border: 2px solid #3e2723; }
+        body.theme-paper #day-preview { background: rgba(255,255,255,0.3); border-top: 2px solid #4e342e; }
+
+        /* --- GLOBAL LAYOUT --- */
         .app-header { height: 50px; width: 100%; position: absolute; top: 0; left: 0; z-index: 10; }
         .header-center { position: absolute; top: 0; left: 0; width: 100%; height: 50px; line-height: 50px; text-align: center; font-weight: bold; font-size: 18px; text-transform: uppercase; z-index: 1; }
         .header-left { position: absolute; top: 8px; left: 5px; z-index: 10; }
@@ -166,8 +246,8 @@
 
 <div id="menu-popup" class="popup">
     <h3>Menu</h3>
-    <button class="full-btn" onclick="openSearch()">Search Events</button>
-    <button class="full-btn" onclick="openJump()">Jump to Date</button>
+    <button class="full-btn" onclick="openSearch()">Search in Calendar</button>
+    <button class="full-btn" onclick="openJump()">Go to date</button>
     <button class="full-btn" onclick="goToToday()">Go to Today</button>
     <button class="full-btn" onclick="openSettings()">Settings & Theme</button>
     <button class="full-btn secondary-btn" onclick="closePopups()">Close</button>
@@ -216,17 +296,19 @@
 <div id="settings-popup" class="popup">
     <h3>Settings</h3>
     <label>Theme:</label>
-    <div class="theme-row">
-        <button class="theme-btn" style="background:#fff; color:#000;" onclick="setTheme('light')">Light</button>
-        <button class="theme-btn" style="background:#000; color:#fff;" onclick="setTheme('dark')">Dark</button>
-        <button class="theme-btn" style="background:#0066cc; color:#fff;" onclick="setTheme('blue')">Blue</button>
-        <button class="theme-btn" style="background:#e91e63; color:#fff;" onclick="setTheme('pink')">Pink</button>
-    </div>
+    <select id="theme-select" onchange="changeThemeFromDropdown()" style="margin-bottom:15px;">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="blue">Blue</option>
+        <option value="pink">Pink</option>
+        <option value="paper">Paper</option>
+    </select>
+
     <label>Calendar View:</label>
-    <button class="full-btn" id="btn-weekstart" onclick="toggleWeekStart()" style="margin-bottom:15px;">Start: Mon</button>
+    <button class="full-btn" id="btn-weekstart" onclick="toggleWeekStart()" style="margin-bottom:15px;">Monday start</button>
 
     <label>Data Management:</label>
-    <button class="full-btn" onclick="resetToDefault()">Reset to Default Data</button>
+    <button class="full-btn" onclick="resetToDefault()">Reset to default data</button>
 
     <label>Backup Data:</label> <textarea id="backup-area" readonly style="height:50px"></textarea>
     <label>Restore Data:</label> <textarea id="restore-area" style="height:50px"></textarea>
@@ -243,6 +325,10 @@
     function initApp() {
         var savedTheme = localStorage.getItem('app_theme') || 'light';
         setTheme(savedTheme);
+
+        var sel = document.getElementById("theme-select");
+        if(sel) sel.value = savedTheme;
+
         var ws = localStorage.getItem('week_start');
         weekStartDay = (ws === null) ? 1 : parseInt(ws);
         updateWeekStartBtn();
@@ -286,6 +372,11 @@
         localStorage.setItem('app_theme', t);
     }
 
+    function changeThemeFromDropdown() {
+        var t = document.getElementById("theme-select").value;
+        setTheme(t);
+    }
+
     function toggleWeekStart() {
         weekStartDay = (weekStartDay === 1) ? 0 : 1;
         localStorage.setItem('week_start', weekStartDay);
@@ -294,7 +385,7 @@
     }
 
     function updateWeekStartBtn() {
-        var lbl = (weekStartDay === 1) ? "Start: Mon" : "Start: Sun";
+        var lbl = (weekStartDay === 1) ? "Monday start" : "Sunday start";
         document.getElementById("btn-weekstart").innerHTML = lbl;
     }
 
@@ -349,7 +440,7 @@
         var c = document.getElementById("event-list-content"); c.innerHTML = "";
         if (eventsData.length === 0) { c.innerHTML = '<div style="text-align:center; padding:20px; opacity:0.5;">No events.</div>'; return; }
 
-        // CHANGED: Sort Descending (Newest First)
+        // Descending order
         eventsData.sort(function(a, b) { return b.date.localeCompare(a.date); });
 
         var html = '';

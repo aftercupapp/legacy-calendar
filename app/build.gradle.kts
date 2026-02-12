@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId = "com.aftercup.calendar"
-        minSdk = 7        // Android 2.1
-        targetSdk = 10    // Android 2.3 (Stable legacy target)
-        versionCode = 2
-        versionName = "1.0.1"
+        minSdk = 7         // Android 2.1 (Still supported!)
+        targetSdk = 19     // CHANGED: Android 4.4 KitKat
+        versionCode = 47    // Bumped for update
+        versionName = "1.1.1"
     }
 
     signingConfigs {

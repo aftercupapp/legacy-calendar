@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-light-bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -75,6 +75,8 @@
         body.theme-light .event-date { color: #666; }
         body.theme-light .popup { background: #fff; color: #000; }
         body.theme-light input, body.theme-light textarea, body.theme-light select { background: #fff; color: #000; border: 1px solid #000; }
+        body.theme-light .full-btn { background: #000; color: #fff; }
+        body.theme-light .secondary-btn { background: #fff; color: #000; }
         body.theme-light .dropdown-menu { background: #fff; border: 1px solid #000; }
         body.theme-light .dropdown-item { border-bottom: 1px solid #ccc; color: #000; }
         body.theme-light .dropdown-item:active { background: #eee; }
@@ -381,7 +383,7 @@
 
 <div id="search-popup" class="popup">
     <h3>Search</h3>
-    <input type="text" id="search-input" placeholder="Type title..." onkeyup="runSearch()" />
+    <input type="text" id="search-input" placeholder="Search in Calendar" onkeyup="runSearch()" />
     <div id="search-results"></div>
     <button class="full-btn secondary-btn" onclick="closePopups()">Close</button>
 </div>
@@ -428,7 +430,7 @@
 </div>
 
 <div id="event-popup" class="popup">
-    <h3 id="popup-title">New item</h3>
+    <h3 id="popup-title">New Item</h3>
 
     <label>Type:</label>
     <select id="input-type">
@@ -506,13 +508,17 @@
     };
 
     function initApp() {
-        var savedTheme = localStorage.getItem('app_theme') || 'light';
+        var savedTheme = 'light';
+        try { savedTheme = localStorage.getItem('app_theme') || 'light'; } catch(e){}
+        if(savedTheme === 'paper') savedTheme = 'beige';
         setTheme(savedTheme);
+
         var sel = document.getElementById("theme-select");
         if(sel) sel.value = savedTheme;
 
-        var ws = localStorage.getItem('week_start');
-        weekStartDay = (ws === null) ? 1 : parseInt(ws);
+        var ws = '1';
+        try { ws = localStorage.getItem('week_start') || '1'; } catch(e){}
+        weekStartDay = parseInt(ws);
         updateWeekStartBtn();
 
         selectedDateStr = formatDateStr(new Date());
@@ -521,11 +527,13 @@
         selectTool('M');
 
         var zone = document.getElementById('touch-zone');
-        zone.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, false);
-        zone.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, false);
+        if(zone) {
+            zone.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, false);
+            zone.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+        }
     }
 
     function handleSwipe() {
@@ -548,10 +556,14 @@
     function setTheme(t) {
         document.body.className = "theme-" + t;
         document.documentElement.className = "theme-" + t + "-bg";
-        localStorage.setItem('app_theme', t);
+        try { localStorage.setItem('app_theme', t); } catch(e){}
     }
     function changeThemeFromDropdown() { setTheme(document.getElementById("theme-select").value); }
-    function toggleWeekStart() { weekStartDay = (weekStartDay === 1) ? 0 : 1; localStorage.setItem('week_start', weekStartDay); updateWeekStartBtn(); renderCurrentView(); }
+    function toggleWeekStart() {
+        weekStartDay = (weekStartDay === 1) ? 0 : 1;
+        try { localStorage.setItem('week_start', weekStartDay); } catch(e){}
+        updateWeekStartBtn(); renderCurrentView();
+    }
     function updateWeekStartBtn() { document.getElementById("btn-weekstart").innerHTML = (weekStartDay === 1) ? "Monday start" : "Sunday start"; }
 
     function parseDate(s) {
@@ -768,7 +780,6 @@
         selectedDateStr = formatDateStr(dt);
         renderCompact();
     }
-
     function renderCompact() {
         document.getElementById("compact-date-lbl").innerHTML = selectedDateStr;
         var list = getItemsForDate(selectedDateStr);

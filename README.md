@@ -24,7 +24,8 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 
 ## ✨ Key Features
 
-* **Dual views:** Switch seamlessly between **list** and **month (grid)** views.
+* **Multiple views:** Switch seamlessly between **list**, **month** and **day** views.
+* **Shift Planner:** Manage your work routines using shift planner.
 * **Event management:** Add, edit, and delete events with **color categories**.
 * **Navigation:**
     * **Search** functionality to find events by title.
@@ -41,12 +42,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 ---
 
 ## ⚗️ Beta Features
-* Ability to add and manage tasks with checkboxes
-* Ability to set recurring entries
-* Day-Month-List view availability instead of List and Month only
-* Added a Today button next to the new event date input field that sets the actual day automatically
-* UI improvements
-* Back button handling improvements
+No new beta features available. Check back later.
 
 ---
 

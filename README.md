@@ -18,7 +18,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 | | | |
 | :---: | :---: | :---: |
 | ![White](https://i.postimg.cc/YChC04X2/Screenshot_2026_02_11_21_18_03.png) <br> **White Theme** | ![Dark](https://i.postimg.cc/3xdxNyLx/Screenshot_2026_02_11_21_18_16.png) <br> **Dark Theme** | ![Blue](https://i.postimg.cc/sgvgxBnD/Screenshot_2026_02_11_21_18_31.png) <br> **Blue Theme** |
-| ![Pink](https://i.postimg.cc/vZkHVQjR/Screenshot_2026_02_11_21_18_46.png) <br> **Pink Theme** | ![Paper](https://i.postimg.cc/V65JqrNg/Screenshot_2026_02_11_19_49_10.png) <br> **Paper Theme** | |
+| ![Pink](https://i.postimg.cc/vZkHVQjR/Screenshot_2026_02_11_21_18_46.png) <br> **Pink Theme** | ![Paper](https://i.postimg.cc/5NN1B3qM/Screenshot_2026_02_18_01_45_20.png) <br> **Beige Theme** | |
 
 ---
 

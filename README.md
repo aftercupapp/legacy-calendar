@@ -10,7 +10,7 @@ Open source calendar apk based on the Aftercup Calendar main app for Android 2.1
 | :---: | :---: |
 | ![List View](https://i.postimg.cc/65jKYvzS/Screenshot_2026_02_18_01_45_40.png) <br> **List view** | ![Month View](https://i.postimg.cc/5NN1B3qM/Screenshot_2026_02_18_01_45_20.png) <br> **Month view** |
 | ![New](https://i.postimg.cc/m22RYwN4/Screenshot_2026_02_18_01_45_49.png) <br> **New entry** | ![Menu](https://i.postimg.cc/NffY647v/Screenshot_2026_02_18_01_46_05.png) <br> **Menu** |
-| ![Search](https://i.postimg.cc/nzMX4jLR/Screenshot_2026_02_11_19_49_35.png) <br> **Search** | ![Jump](https://i.postimg.cc/8PPDRHBD/Screenshot_2026_02_18_01_46_25.png) <br> **Jump to Date** |
+| ![Search](https://i.postimg.cc/8PPDRHBD/Screenshot_2026_02_18_01_46_25.png) <br> **Search** | ![Jump](https://i.postimg.cc/vHHMrzLF/Screenshot_2026_02_18_01_46_39.png) <br> **Jump to Date** |
 | ![Settings](https://i.postimg.cc/bNCP3tLB/Screenshot_2026_02_18_01_46_57.png) <br> **Settings** | ![shift](https://i.postimg.cc/hPynpdpn/Screenshot_2026_02_18_01_47_43.png) <br> **Shift planner** |
 
 ### 🎨 Themes
